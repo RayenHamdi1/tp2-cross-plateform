@@ -49,7 +49,7 @@ class HeroBanner extends StatelessWidget {
                     const Icon(Icons.star, color: Colors.amber, size: 18),
                     const SizedBox(width: 4),
                     Text(
-                      '${destination.rating}',
+                      '${destination.note}',
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.black87,
@@ -80,7 +80,7 @@ class HeroBanner extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    destination.name,
+                    destination.nom,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 22,

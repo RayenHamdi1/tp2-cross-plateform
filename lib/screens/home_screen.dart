@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/destination_card.dart';
 import '../data/destinations.dart';
 import '../widgets/home_header.dart';
 import '../widgets/search_box.dart';
