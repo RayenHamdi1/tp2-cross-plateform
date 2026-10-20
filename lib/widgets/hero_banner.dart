@@ -63,7 +63,7 @@ class HeroBanner extends StatelessWidget {
             // TODO 2 : Colonne avec les informations de la destination
             Positioned(
               left: 20,
-              right: 130,
+              right: 140,
               bottom: 20,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -93,6 +93,22 @@ class HeroBanner extends StatelessWidget {
                     style: const TextStyle(color: Colors.white70, fontSize: 14),
                   ),
                 ],
+              ),
+            ),
+            Positioned(
+              right: 16,
+              bottom: 20,
+              child: FilledButton(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  backgroundColor: const Color(0xFF087F8C),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 12,
+                  ),
+                ),
+                child: const Text('Découvrir'),
               ),
             ),
           ],

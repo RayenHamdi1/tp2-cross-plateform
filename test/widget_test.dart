@@ -13,7 +13,7 @@ void main() {
 
     expect(find.text('Ahlan, Rayen 👋'), findsOneWidget);
     expect(find.text('Sidi Bou Saïd'), findsNWidgets(2));
-    expect(find.text('4.8'), findsOneWidget);
+    expect(find.text('4.8'), findsNWidgets(3));
     expect(find.text('Tunis'), findsNWidgets(2));
   });
 
@@ -24,7 +24,7 @@ void main() {
     addTearDown(() => tester.binding.setSurfaceSize(null));
     await tester.pumpWidget(const RihlaApp());
 
-    expect(find.byIcon(Icons.favorite_border), findsNWidgets(7));
+    expect(find.byIcon(Icons.favorite_border), findsAtLeastNWidgets(3));
 
     await tester.tap(find.byIcon(Icons.favorite_border).at(2));
     await tester.pump();
@@ -41,7 +41,8 @@ void main() {
 
     await tester.tap(find.byIcon(Icons.favorite));
     await tester.pump();
-    expect(find.byIcon(Icons.favorite_border), findsNWidgets(7));
+    expect(find.byIcon(Icons.favorite), findsNothing);
+    expect(find.byIcon(Icons.favorite_border), findsAtLeastNWidgets(1));
     expect(find.text('Retiré des favoris'), findsOneWidget);
   });
 

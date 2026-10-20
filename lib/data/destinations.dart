@@ -1,6 +1,6 @@
 import '../models/destination.dart';
 
-const List<String> categories = ['Tout', 'Plage', 'Désert', 'Culture'];
+const List<String> categories = ['Tout', 'Plage', 'Désert', 'Patrimoine'];
 
 const List<Destination> destinations = [
   Destination(
@@ -9,7 +9,7 @@ const List<Destination> destinations = [
     image: 'assets/images/sidi_bou_said.png',
     note: 4.8,
     prix: 150,
-    categorie: 'Culture',
+    categorie: 'Patrimoine',
     description: 'Village blanc et bleu perché au-dessus de la mer.',
   ),
   Destination(
@@ -36,7 +36,7 @@ const List<Destination> destinations = [
     image: 'assets/images/el_jem.png',
     note: 4.6,
     prix: 120,
-    categorie: 'Culture',
+    categorie: 'Patrimoine',
     description: 'Amphithéâtre romain parmi les mieux conservés au monde.',
   ),
   Destination(
