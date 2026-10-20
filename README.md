@@ -55,3 +55,28 @@ Palier 4 : réponses aux questions de compréhension
  - Fichier : `lib/data/destinations.dart`
  - Lignes à ajouter : **11 lignes** (soit 1 objet `Destination`).
  
+Palier 5 : réponses aux questions de compréhension
+
+9. Que se passe-t-il si on écrit `_categorie = c;` sans `setState` ?
+   Quel est le résultat à l'écran ? Et en mémoire ?
+
+ - À l'écran : rien ne change. La puce ne se coche pas et la liste des
+   cartes reste la même, car Flutter ne sait pas qu'il doit redessiner l'écran.
+ - En mémoire : la variable `_categorie` prend bien la nouvelle valeur.
+ - `setState` sert à prévenir Flutter d'appeler `build()` à nouveau.
+
+
+ 10. Pourquoi `_filtrees` est-il un getter recalculé à chaque `build()`
+     plutôt qu'une variable ?
+
+ Un getter est recalculé à chaque utilisation, donc il suit toujours la valeur
+ actuelle de `_categorie`. Une variable serait calculée une seule fois et garderait
+ l'ancienne liste : il faudrait la mettre à jour à la main après chaque clic.
+
+
+ 11. Pourquoi `HeroBanner` peut-il rester un `StatelessWidget` alors que
+     l'écran change ?
+
+ `HeroBanner` n'a pas d'état à lui : il affiche toujours la même destination
+ (`destinations.first`) et ne dépend pas de la catégorie choisie. Seul
+ `HomeScreen` garde l'état (`_categorie`), donc seul lui est un `StatefulWidget`.

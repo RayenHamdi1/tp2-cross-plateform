@@ -9,8 +9,8 @@ void main() {
     await tester.pumpWidget(const RihlaApp());
 
     expect(find.text('Ahlan, Rayen 👋'), findsOneWidget);
-    expect(find.text('Sidi Bou Saïd'), findsOneWidget);
+    expect(find.text('Sidi Bou Saïd'), findsNWidgets(2));
     expect(find.text('4.8'), findsOneWidget);
-    expect(find.text('Tunis'), findsOneWidget);
+    expect(find.text('Tunis'), findsNWidgets(2));
   });
 }
