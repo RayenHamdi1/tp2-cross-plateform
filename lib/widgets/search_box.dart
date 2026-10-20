@@ -18,8 +18,13 @@ class SearchBox extends StatelessWidget {
         children: [
           Icon(Icons.search, color: cs.onSurfaceVariant),
           const SizedBox(width: 12),
-          const Expanded(child: Text('rechercher une destination')),
-          Icon(Icons.tune, color: cs.primary),
+          Expanded(
+            child: Text(
+              'Rechercher une destination',
+              style: TextStyle(color: cs.onSurfaceVariant),
+            ),
+          ),
+          Icon(Icons.tune, color: cs.primary, size: 24),
         ],
       ),
     );

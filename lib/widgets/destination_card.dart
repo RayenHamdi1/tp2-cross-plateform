@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/destination.dart';
+import 'favorite_button.dart';
 
 class DestinationCard extends StatelessWidget {
   final Destination destination;
@@ -20,16 +21,22 @@ class DestinationCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  destination.nom,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        destination.nom,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    const FavoriteButton(),
+                  ],
                 ),
-                const SizedBox(height: 2),
                 Text(
                   destination.region,
                   style: TextStyle(color: Colors.grey[600], fontSize: 12),
