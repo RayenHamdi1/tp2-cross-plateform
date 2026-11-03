@@ -217,8 +217,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
                   'Date de départ',
                   Icons.calendar_month_outlined,
                 ),
-                validator: (_) =>
-                    _date == null ? 'Choisissez une date' : null,
+                validator: (_) => _date == null ? 'Choisissez une date' : null,
               ),
               const SizedBox(height: 16),
               SegmentedButton<String>(
@@ -249,9 +248,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
                 controlAffinity: ListTileControlAffinity.leading,
                 contentPadding: EdgeInsets.zero,
                 title: const Text("J'accepte les conditions d'annulation"),
-                subtitle: const Text(
-                  'Annulation gratuite jusqu’à 48 h avant',
-                ),
+                subtitle: const Text('Annulation gratuite jusqu’à 48 h avant'),
               ),
             ],
           ),

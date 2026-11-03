@@ -33,20 +33,25 @@ class DestinationCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(14),
-                child: SizedBox(
-                  width: 88,
-                  height: 88,
-                  child: Image.asset(
-                    destination.image,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => ColoredBox(
-                      color: cs.surfaceContainerHighest,
-                      child: Icon(
-                        Icons.image_not_supported_outlined,
-                        color: cs.onSurfaceVariant,
-                      ),
+              Hero(
+                tag: 'image-${destination.nom}',
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: SizedBox(
+                    width: 88,
+                    height: 88,
+                    child: Image.asset(
+                      destination.image,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return ColoredBox(
+                          color: cs.surfaceContainerHighest,
+                          child: Icon(
+                            Icons.image_not_supported_outlined,
+                            color: cs.onSurfaceVariant,
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
