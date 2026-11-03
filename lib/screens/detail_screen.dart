@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../models/destination.dart';
+import '../models/reservation.dart';
 import '../widgets/favorite_button.dart';
+import 'reservation_screen.dart';
 
-/// Devoir TP3 — Écran de détail d'une destination (version du kit TP4).
-/// À relier aux cartes au palier 2 du TP4.
 class DetailScreen extends StatefulWidget {
   final Destination destination;
 
@@ -16,6 +16,41 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int _voyageurs = 1;
+
+  Future<void> _ouvrirReservation() async {
+    final reservation = await Navigator.push<Reservation>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ReservationScreen(
+          destination: widget.destination,
+          voyageurs: _voyageurs,
+        ),
+      ),
+    );
+
+    if (!mounted || reservation == null) return;
+
+    await showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        icon: const Icon(Icons.check_circle, color: Colors.green, size: 48),
+        title: const Text('Réservation confirmée'),
+        content: Text(
+          '${reservation.nom}, votre séjour à ${reservation.destination.nom} '
+          'est réservé pour ${reservation.voyageurs} voyageur(s), '
+          'formule ${reservation.formule}.\n\n'
+          'Total : ${reservation.total} DT\n'
+          'Un e-mail de confirmation sera envoyé à ${reservation.email}.',
+        ),
+        actions: [
+          FilledButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Parfait'),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +74,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: _BoutonRond(
                     child: IconButton(
                       tooltip: 'Retour',
-                      onPressed: () {}, // TP4 palier 2
+                      onPressed: () => Navigator.pop(context),
                       icon: const Icon(Icons.arrow_back),
                     ),
                   ),
@@ -133,11 +168,11 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    const Expanded(
+                    Expanded(
                       child: _InfoTile(
                         icone: Icons.groups_outlined,
                         label: 'Groupe',
-                        valeur: 'Max 12',
+                        valeur: 'Max ${d.groupeMax}',
                       ),
                     ),
                   ],
@@ -212,7 +247,7 @@ class _DetailScreenState extends State<DetailScreen> {
               const SizedBox(width: 20),
               Expanded(
                 child: FilledButton(
-                  onPressed: () {}, // TP4 palier 3 puis 5
+                  onPressed: _ouvrirReservation,
                   style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
