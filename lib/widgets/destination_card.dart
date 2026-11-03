@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/detail_screen.dart';
+
 import '../models/destination.dart';
 import 'favorite_button.dart';
 
@@ -13,9 +15,15 @@ class DestinationCard extends StatelessWidget {
       elevation: 0,
       color: Theme.of(context).colorScheme.surfaceContainerHighest,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      clipBehavior: Clip.antiAlias,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(destination: destination),
+            ),
+          );
+        },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -28,7 +36,9 @@ class DestinationCard extends StatelessWidget {
                   destination.image,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) => ColoredBox(
-                    color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                    color: Theme.of(context)
+                        .colorScheme
+                        .surfaceContainerHighest,
                     child: Icon(
                       Icons.image_not_supported_outlined,
                       color: Theme.of(context).colorScheme.onSurfaceVariant,
