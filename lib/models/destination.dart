@@ -6,6 +6,8 @@ class Destination {
   final int prix;
   final String categorie;
   final String description;
+  final int duree; // en jours
+  final int groupeMax;
 
   const Destination({
     required this.nom,
@@ -15,5 +17,7 @@ class Destination {
     required this.prix,
     required this.categorie,
     required this.description,
+    required this.duree,
+    required this.groupeMax,
   });
 }

@@ -11,6 +11,8 @@ const List<Destination> destinations = [
     prix: 150,
     categorie: 'Patrimoine',
     description: 'Village blanc et bleu perché au-dessus de la mer.',
+    duree: 2,
+    groupeMax: 15,
   ),
   Destination(
     nom: 'Djerba',
@@ -20,6 +22,8 @@ const List<Destination> destinations = [
     prix: 180,
     categorie: 'Plage',
     description: 'Île de plages dorées et de villages traditionnels.',
+    duree: 4,
+    groupeMax: 12,
   ),
   Destination(
     nom: 'Tozeur',
@@ -29,6 +33,8 @@ const List<Destination> destinations = [
     prix: 200,
     categorie: 'Désert',
     description: 'Oasis aux portes du Sahara, entourée de palmeraies.',
+    duree: 3,
+    groupeMax: 10,
   ),
   Destination(
     nom: 'El Jem',
@@ -38,6 +44,8 @@ const List<Destination> destinations = [
     prix: 120,
     categorie: 'Patrimoine',
     description: 'Amphithéâtre romain parmi les mieux conservés au monde.',
+    duree: 1,
+    groupeMax: 20,
   ),
   Destination(
     nom: 'Douz',
@@ -47,6 +55,8 @@ const List<Destination> destinations = [
     prix: 170,
     categorie: 'Désert',
     description: 'La porte du désert, célèbre pour ses dunes.',
+    duree: 3,
+    groupeMax: 10,
   ),
   Destination(
     nom: 'Hammamet',
@@ -56,5 +66,7 @@ const List<Destination> destinations = [
     prix: 160,
     categorie: 'Plage',
     description: 'Station balnéaire connue pour ses plages et sa médina.',
+    duree: 3,
+    groupeMax: 15,
   ),
 ];
