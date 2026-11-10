@@ -67,6 +67,51 @@
       "description": "Médina fortifiée au bord de la mer, jardins de jasmin et longues plages : la station balnéaire historique du Cap Bon."
     }
   ],
-  "reservations": [],
+  "reservations": [
+    {
+      "destinationId": "1",
+      "nom": "evvdfvdfv",
+      "email": "dfvdvdv@mail.tn",
+      "telephone": "12354771",
+      "voyageurs": 1,
+      "formule": "Confort",
+      "total": 234,
+      "dateDepart": "2026-11-23T00:00:00.000",
+      "id": "xX4Tax6YrJk"
+    },
+    {
+      "destinationId": "1",
+      "nom": "dsvsdvsdv",
+      "email": "savsav@mail.tn",
+      "telephone": "12345678",
+      "voyageurs": 1,
+      "formule": "Confort",
+      "total": 234,
+      "dateDepart": "2026-11-19T00:00:00.000",
+      "id": "MISDJRR1boA"
+    },
+    {
+      "destinationId": "1",
+      "nom": "gfgfbfg",
+      "email": "fdbf@mail.tn",
+      "telephone": "12345678",
+      "voyageurs": 1,
+      "formule": "Confort",
+      "total": 234,
+      "dateDepart": "2026-11-16T00:00:00.000",
+      "id": "Q0uMXsj58Z0"
+    },
+    {
+      "destinationId": "1",
+      "nom": "rayen hamdi",
+      "email": "rayen@mail.tn",
+      "telephone": "12345678",
+      "voyageurs": 1,
+      "formule": "Confort",
+      "total": 234,
+      "dateDepart": "2026-11-23T00:00:00.000",
+      "id": "PFzZ3F0_wc8"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
