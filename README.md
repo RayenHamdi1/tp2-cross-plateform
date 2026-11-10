@@ -80,3 +80,46 @@ Palier 5 : réponses aux questions de compréhension
  `HeroBanner` n'a pas d'état à lui : il affiche toujours la même destination
  (`destinations.first`) et ne dépend pas de la catégorie choisie. Seul
  `HomeScreen` garde l'état (`_categorie`), donc seul lui est un `StatefulWidget`.
+
+
+
+ tp S4
+ Palier 2 — Questions
+Q1. Filtrez « Désert », ouvrez Tozeur, puis revenez. Le filtre est-il conservé ? Pourquoi ?
+Réponse : Oui, le filtre est conservé. Quand on ouvre Tozeur, on ajoute un nouvel écran avec Navigator.push. Quand on revient avec Navigator.pop, l’écran précédent est toujours dans la pile, donc son état (le filtre) est gardé. TP4_Rihla_Navigation_Formulaires
+
+Q2. Comment DetailScreen connaît-il la destination ?
+Réponse : La destination est envoyée à DetailScreen dans son constructeur. C’est le même principe utilisé dans le TP 3 : on passe les données d’un écran à un autre. TP4_Rihla_Navigation_Formulaires
+
+Q3. Que se passe-t-il si on retire clipBehavior ?
+Réponse : L’effet d’animation quand on touche la carte peut dépasser les coins arrondis de la carte. clipBehavior permet de garder cet effet à l’intérieur des coins. TP4_Rihla_Navigation_Formulaires
+
+Palier 3 — Questions
+
+Q1. Que fait _formKey.currentState!.validate() ? Que renvoie-t-elle ?
+Réponse : Elle vérifie tous les champs du formulaire avec leurs validateurs.  
+- Si tout est correct → elle renvoie true.
+- S’il y a une erreur → elle renvoie false et affiche les messages d’erreur. TP4_Rihla_Navigation_Formulaires
+Q2. Quelle est la différence entre inputFormatters et validator ?
+Réponse :  
+- inputFormatters contrôlent ce que l'utilisateur peut écrire. Par exemple, le téléphone accepte seulement les chiffres et maximum 8 chiffres.
+- validator vérifie si la valeur finale est correcte et affiche un message d'erreur si nécessaire. TP4_Rihla_Navigation_Formulaires
+
+Q3. Pourquoi appeler dispose() sur les contrôleurs ?
+Réponse : Pour libérer les ressources utilisées par les TextEditingController quand l'écran est fermé. TP4_Rihla_Navigation_Formulaires
+Palier 4 — Questions
+
+Q1. Pourquoi le champ date est readOnly ?
+Réponse : Parce que l'utilisateur ne doit pas écrire la date avec le clavier. Il doit choisir la date avec le calendrier showDatePicker. TP4_Rihla_Navigation_Formulaires
+
+Q2. _total est un getter. Pourquoi n'a-t-on pas besoin de le mettre à jour nous-mêmes ?
+Réponse : Parce que _total est recalculé automatiquement chaque fois qu'on le demande. Quand la formule change, _prixParPersonne change aussi, donc _total donne automatiquement le nouveau prix. TP4_Rihla_Navigation_Formulaires
+Palier 5 — Questions
+Q1. Que vaut reservation si l'utilisateur quitte le formulaire avec la flèche retour ?
+Réponse : reservation vaut null, car aucune réservation n'a été validée et renvoyée. TP4_Rihla_Navigation_Formulaires
+
+Q2. Pourquoi faut-il tester mounted après await ?
+Réponse : Parce que pendant le await, l'écran peut être fermé. Le test mounted vérifie que l'écran existe encore avant d'utiliser son context. Cela évite une erreur. TP4_Rihla_Navigation_Formulaires
+
+Q3. Le bouton « Parfait » utilise Navigator.pop. Qu'est-ce que cela nous apprend ?
+Réponse : Une boîte de dialogue est aussi un écran placé dans la pile de navigation. Navigator.pop permet donc de fermer la boîte de dialogue et revenir à l'écran précédent.
